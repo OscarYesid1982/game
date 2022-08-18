@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Oscar'S Game</title>
+<style>
+#miCanvas{  border:dotted 2px yellow;
+                background:green;}
+</style>
+<script>
+window.onload = function(){
+    var canvas = document.getElementById("miCanvas");
+    if(canvas && canvas.getContext){
+        var ctx = canvas.getContext("2d");
+        if(ctx){
+            
+
+            ctx.lineWidth = 10;
+            ctx.fillStyle = "white";
+            ctx.strokeStyle = "Blue";
+            //Letra "O"
+            ctx.fillRect(10,80,80,80);
+            ctx.strokeRect(10,80,80,80);
+
+            //Letra "S"
+             //Descripcion de lineas
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "yellow";
+            //Dibujamos lineas
+            ctx.beginPath();
+            ctx.moveTo(100,80);
+            ctx.lineTo(145,80);
+            ctx.moveTo(105,80);
+            ctx.lineTo(105,125);
+            ctx.moveTo(100,125);
+            ctx.lineTo(140,125);
+            ctx.moveTo(140,120);
+            ctx.lineTo(140,160);
+            ctx.moveTo(100,160);
+            ctx.lineTo(145,160)
+            ctx.stroke();
+
+             //Letra "C"
+             //Descripcion de lineas
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "red";
+            //Dibujamos lineas
+            ctx.beginPath();
+            ctx.moveTo(150,80);
+            ctx.lineTo(195,80);
+            ctx.moveTo(155,80);
+            ctx.lineTo(155,160);
+            ctx.moveTo(150,160);
+            ctx.lineTo(195,160);           
+            ctx.stroke();
+
+            //Letra "A"
+             //Descripcion de lineas
+             ctx.lineWidth = 10;
+            ctx.strokeStyle = "white";
+            //Dibujamos lineas
+            ctx.beginPath();
+            ctx.moveTo(225,75);
+            ctx.lineTo(240,165);
+            ctx.moveTo(225,75);
+            ctx.lineTo(205,165);            
+            ctx.moveTo(190,110);
+            ctx.lineTo(260,130);           
+            ctx.stroke();
+
+            //Letra "R"
+            //Descripcion de lineas
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "Gray";
+            ctx.fillStyle = "white";
+            //Dibujamos lineas
+            ctx.beginPath();
+            ctx.fillRect(270,80,50,30);
+            ctx.strokeRect(270,80,50,30);
+            ctx.moveTo(270,75);
+            ctx.lineTo(270,165);
+            ctx.moveTo(290,108);
+            ctx.lineTo(320,165);
+            ctx.stroke();
+
+            var imagen = new Image();
+            //
+            function procesaImagen(){
+                ctx.drawImage(imagen,400,30);         
+            }
+            //
+            imagen.src = "imagenes/og.png";
+            imagen.onload = function(e){
+                procesaImagen();
+            }
+
+        } else {
+            alert("Error al crear tu contexto");    
+        }
+    }
+}
+</script>
+</head>
+<body>
+<h1>JUEGOS OSCARG</h1>
+
+<h2>Da click en el juego de tu elección</h2>
+
+<h2> <a href = "game.html">Juego Angry Birds Pirate Game</a></h2>
+<h2> <a href = "entrega/index.html">Indriver Bogota</a></h2>
+
+<canvas id="miCanvas" width="700px" height="300px">
+Tu navegador no soporta CANVAS
+</canvas>
+</body>
+</html>
